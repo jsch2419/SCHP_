@@ -89,6 +89,7 @@ def get_palette(num_cls):
 
 
 def main():
+    print("Hellow World")
     args = get_arguments()
 
     gpus = [int(i) for i in args.gpu.split(',')]
