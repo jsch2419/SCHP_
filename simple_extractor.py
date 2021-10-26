@@ -133,7 +133,9 @@ def main():
             s = meta['scale'].numpy()[0]
             w = meta['width'].numpy()[0]
             h = meta['height'].numpy()[0]
-
+            
+            print("center: ", c, " ---- scale: ", s,  " ---- width: ",w, " ---- height: ",h)
+            
             output = model(image.cuda())
             upsample = torch.nn.Upsample(size=input_size, mode='bilinear', align_corners=True)
             upsample_output = upsample(output[0][-1][0].unsqueeze(0))
